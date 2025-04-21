@@ -1,36 +1,14 @@
 {% extends "layout.html" %}
 
 {% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
-  <script type="text/javascript" src="{{ url_for('static', filename = 'home.js') }}"></script>
-  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
-
-  <div class="main-home">
-    <h2 class="instruction">Hover on one of the region dots to explore!</h2>
-    <div class="map-container">
-      <img src="{{ url_for('static', filename='media/map.png') }}" alt="China map" class="china-map">
-  
-      {% for region in region_status.keys() %}
-      <div class="dot dot-{{ region|lower }} {% if hovered_region == region %}active{% endif %}" data-region="{{ region }}"></div>
-      {% endfor %}
-  
-      <!-- Hover pop-up -->
-      <div class="region-info-box hidden" id="region-info">
-        <img id="region-image" src="" alt="Region image">
-        <div class="region-info-text">
-          <h4 id="region-name"></h4>
-          <a id="explore-link" href="#">Explore ></a>
-        </div>
-      </div>
-    </div>
-  
-    <div class="progress-container">
-      <label for="progress">Progress Bar</label>
-      <input type="range" id="progress" min="0" max="{{ max_progress }}" value="{{ progress }}" disabled>
-      <div class="progress-labels">
-        <span>0</span>
-        <span>{{ max_progress }}</span>
-      </div>
-    </div>
+<div class="hero-section">
+  <img src="{{ url_for('static', filename='media/home_image.jpeg') }}" alt="Chinese dishes" class="hero-background">
+  <div class="hero-overlay">
+    <h1 class="hero-title">Chinese Regional Cuisines</h1>
+    <a href="{{ url_for('china_map') }}" class="hero-button">Explore Specific Cuisines</a>
   </div>
+</div>
+
 {% endblock %}

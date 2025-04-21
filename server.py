@@ -6,6 +6,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
+    return render_template('home.html')  
+
+@app.route('/china-map')
+def china_map():
     with open('data/region_status.json', 'r') as f:
         region_status = json.load(f)
 
@@ -16,7 +20,7 @@ def home():
     progress = sum(1 for status in region_status.values() if status is True)
 
     return render_template(
-        'home.html',
+        'china_map.html',
         region_status=region_status,
         progress=progress,
         max_progress=max_progress,
