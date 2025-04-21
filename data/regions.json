@@ -3,7 +3,7 @@
       "chinese_name": "江南",
       "flavors": "Jiangnan flavors are known for being light, delicate, and slightly sweet, often featuring fresh seafood, soya-based sauces, and subtle use of vinegar. Dishes are typically steamed or braised, with a focus on umami and tender textures. Seasoning is mild, allowing the natural flavors of the ingredients to shine through.",
       "common_ingredients": "Fish, shrimp, crab, eel, lotus root, bamboo shoots, shiitake mushrooms, soy sauce, sugar, Shaoxing wine, ginger",
-      "status": true,
+      "status": false,
       "culture_video": "https://youtu.be/iCpS6r4cCGw?si=bBMi65CMP-xvPdkZ",
       "demo_dishes": ["Sweet Lotus Root (桂花糖藕)", "Steamed Lion's Head Meatballs (狮子头)", "Squirrel-Shaped Mandarin Fish (松鼠桂鱼)"]
     },
