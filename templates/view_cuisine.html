@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<div class="cuisine-container">
+  <h1 class="region-title">{{ region }} ({{ regions[region].chinese_name }})</h1>
+
+  <section class="flavor-section">
+    <h2>Flavors</h2>
+    <p>{{ regions[region].flavors }}</p>
+  </section>
+
+  <section class="ingredients-section">
+    <h2>Common Ingredients</h2>
+    <p>{{ regions[region].common_ingredients }}</p>
+  </section>
+
+  <div class="dishes-section">
+    {% for dish in regions[region].demo_dishes %}
+      {% set eng_name = dish.split('(')[0].strip() %}
+      {% set filename = eng_name|lower|replace("'", "")|replace(" ", "_")|replace("-", "_")|replace(",", "") + '.png' %}
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            {{ dish | replace('(', '<br>(') }}
+          </div>
+          <div class="flip-card-back">
+            <img src="/static/media/{{ region }}/{{ filename }}" alt="{{ dish }}">
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="nav-links">
+    <div class="previous-page">
+      <a href="{{ url_for('view_culture', region=region|lower) }}">&lt; Back to Culture</a>
+    </div>
+    <div class="next-page">
+      <a href="{{ url_for('view_quiz', region=region|lower) }}">Take a Short Quiz &gt;</a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

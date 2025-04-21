@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<div class="culture-container">
+  <div class="culture-content">
+    <h1 class="region-title">{{ region }} ({{ regions[region].chinese_name }})</h1>
+
+    <div class="video-wrapper">
+      <iframe width="960" height="540" src="https://www.youtube.com/embed/{{ regions[region].culture_video.split('?')[0].split('/')[-1] }}" 
+              title="Cultural Video" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+  <div class="next-page">
+    <a href="{{ url_for('view_cuisine', region=region|lower) }}">Explore the Cuisine ></a>
+  </div>
+</div>
+
+{% endblock %}

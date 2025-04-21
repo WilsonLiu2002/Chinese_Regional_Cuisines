@@ -3,6 +3,10 @@
 {% block content %}
 
   <script type="text/javascript" src="{{ url_for('static', filename = 'china_map.js') }}"></script>
+  <script>
+    const regionImages = {{ region_images | tojson }};
+  </script>
+    
   <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
 
   <div class="main-map">
@@ -10,7 +14,7 @@
     <div class="map-container">
       <img src="{{ url_for('static', filename='media/map.png') }}" alt="China map" class="china-map">
   
-      {% for region in region_status.keys() %}
+      {% for region in regions.keys() %}
       <div class="dot dot-{{ region|lower }} {% if hovered_region == region %}active{% endif %}" data-region="{{ region }}"></div>
       {% endfor %}
   
