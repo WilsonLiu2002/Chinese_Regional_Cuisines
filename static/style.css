@@ -1,0 +1,114 @@
+.background {
+    position: relative; /* Ensure the content sits on top */
+    background-size: cover;
+    height: 25vh;
+    padding: 60px 20px;
+    z-index: 1; /* Ensure content is above the background image */
+}
+
+.navbar {
+    background-color: rgba(255, 0, 0, 0.4); /* Semi-transparent background for the navbar */
+    z-index: 1; /* Ensure navbar is on top of the background image */
+}
+
+.navbar a {
+    color: rgba(90, 90, 90, 1) !important; /* Set the text inside navbar links to grey */
+}
+
+p {
+    font-size: 17px;
+    white-space: pre-wrap;
+}
+
+.navbar-nav.ml-auto {
+    margin-left: auto; /* This will push the search bar to the right side of the navbar */
+}
+
+.view-journal {
+    color: rgba(90, 90, 90, 1) !important;
+    font-size: 16px;
+    text-decoration: underline !important;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.main-home {
+    text-align: center;
+    margin-top: 40px;
+}
+  
+.instruction {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+  
+.map-container {
+    position: relative;
+    display: inline-block;
+}
+  
+.china-map {
+    width: 600px;
+}
+  
+.dot {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 0, 0, 0.6);
+    border-radius: 50%;
+    position: absolute;
+    transition: background-color 0.3s ease;
+}
+  
+.dot.active,
+.dot:hover {
+    background-color: rgba(255, 0, 0, 1);
+    cursor: pointer;
+}
+  
+.dot-xinjiang { top: 160px; left: 120px; }
+.dot-dongbei { top: 110px; left: 510px; }
+.dot-sichuan { top: 310px; left: 290px; }
+.dot-guangdong { top: 400px; left: 415px; }
+.dot-jiangnan { top: 290px; left: 480px; }
+  
+.region-info-box {
+    position: absolute;
+    background: white;
+    border: 2px solid #ccc;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    z-index: 5;
+}
+  
+.region-info-box img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+  
+.region-info-box.hidden {
+    display: none;
+}
+  
+.progress-container {
+    margin-top: 30px;
+}
+  
+input[type=\"range\"] {
+    width: 300px;
+    margin: 10px auto;
+}
+  
+.progress-labels {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin: auto;
+    font-weight: bold;
+}

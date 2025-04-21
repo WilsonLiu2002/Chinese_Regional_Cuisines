@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="data:,">
+
+    <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+
+    <title>Chinese Regional Cuisines</title>
+    <style>
+      .background::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-size: cover;
+          background-image: url('{{ url_for("static", filename="media/background.jpg") }}');
+          background-position: 0% 27%;
+          filter: grayscale(100%); /* Apply grayscale and brightness */
+          opacity: 0.1; /* Make the image transparent without affecting the text */
+          z-index: -1; /* Ensure it stays behind the content */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background">
+      <div class="container">
+        <h1>The Rich Flavors of Chinese Regional Cuisines</h1>
+        <p>Discover the tastes of China and your favorite dishes with food lovers from around the globe!</p>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container d-flex align-items-center">
+        <div class="brand-group d-flex align-items-center">
+          <a class="navbar-brand" href="/">Chinese Cuisine Explorer</a>
+          <a class="view-journal">Journal</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>      
+    </nav>
+
+    <div class="container">   
+        {% block content %}
+        {% endblock %}
+    </div>
+  </body>
+</html>
