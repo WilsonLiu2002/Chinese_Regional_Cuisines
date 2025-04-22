@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <link rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}">
+
+  <div class="journal-container">
+
+    <h1>Journal</h1>
+
+    <form method="POST">
+      {% for q in questions %}
+        <div class="journal-question">
+          <p>{{ q }}</p>
+          <textarea
+            name="q{{ loop.index0 }}"
+            placeholder="Your response…"
+          >{{ latest_answers['q' ~ loop.index0] or '' }}</textarea>
+        </div>
+      {% endfor %}
+
+      <button type="submit">Save Journal</button>
+    </form>
+
+    <div class="next-page">
+      <a href="{{ url_for('china_map') }}">
+        Explore Other Cuisines &gt;
+      </a>
+    </div>
+  </div>
+{% endblock %}

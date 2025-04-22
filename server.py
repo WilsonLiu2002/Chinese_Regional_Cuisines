@@ -1,8 +1,14 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request, redirect, url_for
 import json
 import os
+from utils import data_loader
 
 app = Flask(__name__)
+
+@app.context_processor
+def inject_regions():
+    # This makes `regions` available in ALL templates
+    return dict(regions=data_loader.load_all_regions())
 
 @app.route('/')
 def home():
@@ -58,7 +64,40 @@ def view_quiz(region):
     with open('data/regions.json', 'r') as f:
         regions = json.load(f)
 
-    return render_template('view_quiz.html', region=region_key, regions=regions)
+    # load this region’s quiz
+    quiz = data_loader.get_quiz_for_region(region_key)
+    feedback = data_loader.load_feedback()
+
+    return render_template('view_quiz.html', region=region_key, regions=regions, quiz=quiz, feedback=feedback)
+
+@app.route('/journal/<region>', methods=['GET', 'POST'])
+def view_journal(region):
+  region_key = region.capitalize()
+  regions = data_loader.load_all_regions()
+
+  if request.method == 'POST':
+    # collect all textarea inputs (names: q0, q1, q2, …)
+    answers = {key: val for key, val in request.form.items()}
+    data_loader.update_journal(region_key, answers)
+    # Mark this region’s status = true
+    data_loader.set_region_status(region_key, True)
+    # redirect back to GET so refresh doesn’t repost
+    return redirect(url_for('view_journal', region=region.lower()))
+
+  # GET
+  questions       = data_loader.get_questions_for_region(region_key) or []
+  existing_entries = data_loader.load_journal_answers(region_key)
+  # you could prefill with the latest entry if you like:
+  latest_answers = existing_entries[-1]['answers'] if existing_entries else {}
+
+  return render_template(
+    'view_journal.html',
+    region=region_key,
+    regions=regions,
+    questions=questions,
+    latest_answers=latest_answers
+  )
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
