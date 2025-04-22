@@ -1,0 +1,80 @@
+{
+    "Jiangnan": [
+      {
+        "id": "q1",
+        "type": "dragdrop",
+        "prompt": "Drag the ingredients commonly used in Jiangnan Cuisines into the bowl (drag 5 items).",
+        "options": [
+            {"filename":"chili_peper.png","correct":false},
+            {"filename":"beef.png","correct":false},
+            {"filename":"eel.png","correct":true},
+            {"filename":"sugar.png","correct":true},
+            {"filename":"chicken.png","correct":false},
+            {"filename":"fish.png","correct":true},
+            {"filename":"crab.png","correct":true},
+            {"filename":"lamb.png","correct":false},
+            {"filename":"lotus_root.png","correct":true}
+        ]
+      }
+    ],
+    "Sichuan": [
+      {
+        "id": "q1",
+        "type": "dragdrop",
+        "prompt": "Drag the ingredients commonly used in Jiangnan Cuisines into the bowl (drag 5 items).",
+        "options": [
+            {"filename":"chili_peper.png","correct":true},
+            {"filename":"crab.png","correct":false},
+            {"filename":"chicken.png","correct":true},
+            {"filename":"garlic.png","correct":true},
+            {"filename":"sugar.png","correct":false},
+            {"filename":"tofu.png","correct":true},
+            {"filename":"beef.png","correct":true},
+            {"filename":"lamb.png","correct":false},
+            {"filename":"lotus_root.png","correct":false}
+        ]
+      }
+    ],
+    "Guangdong": [
+      {
+        "id": "mp1",
+        "type": "multiple_choice",
+        "prompt": "Which of the four dishes come from Guangdong?",
+        "options": [
+            {"value":"basi_sweet_potato", "label":"A. Basi Sweet Potato (拔丝土豆)", "filename":"mp1/basi_sweet_potato.png"},
+            {"value":"boiled_beef", "label":"B. Sichuan Boiled Beef (水煮牛肉)", "filename":"mp1/boilded_beef.png"},
+            {"value":"dong_po_rou", "label":"C. DongPo Pork (东坡肉)", "filename":"mp1/dong_po_rou.png"},
+            {"value":"roasted_goose", "label":"D. Roasted Goose (烧鹅)", "filename":"mp1/roasted_goose.png"}
+        ],
+        "answer": "roasted_goose"
+      }
+    ],
+    "Dongbei": [
+      {
+        "id": "mp2",
+        "type": "multiple_choice",
+        "prompt": "Which of the four dishes come from Dongbei?",
+        "options": [
+            {"value":"baiqie_chicken", "label":"A. Plain Poached Chicken (白切鸡)", "filename":"mp2/baiqie_chicken.png"},
+            {"value":"boiled_fish", "label":"B. Sichuan Spicy Fish (水煮鱼)", "filename":"mp2/boiled_fish.png"},
+            {"value":"stewed_goose", "label":"C. Iron Pot Braised Goose (铁锅炖大鹅)", "filename":"mp2/stewed_goose.png"},
+            {"value":"xihucuyu", "label":"D. West Lake Vinegar Fish (西湖醋鱼)", "filename":"mp2/xihucuyu.png"}
+        ],
+        "answer": "stewed_goose"
+      }
+    ],
+    "Xinjiang": [
+      {
+        "id": "mp3",
+        "type": "multiple_choice",
+        "prompt": "Which of the four dishes come from Xinjiang?",
+        "options": [
+            {"value":"kaobaozi", "label":"A. Baked Lamb Buns (烤包子)", "filename":"mp3/kaobaozi.png"},
+            {"value":"longjing_shrimp", "label":"B. Longjing Shrimp (龙井虾仁)", "filename":"mp3/longjing_shrimp.png"},
+            {"value":"roasted_pork", "label":"C. Roasted Pork (烤猪肉)", "filename":"mp3/roasted_pork.png"},
+            {"value":"suancai_paigu", "label":"D. Pork Ribs with Pickled Cabbage (酸菜排骨)", "filename":"mp3/suancai_paigu.png"}
+        ],
+        "answer": "kaobaozi"
+      }
+    ]
+  }
