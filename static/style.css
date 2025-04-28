@@ -193,6 +193,7 @@ input[type=\"range\"] {
     font-size: 2.5rem;
     margin-bottom: 30px;
     text-align: center;
+    font-family: 'Poppins', sans-serif;
 }
   
 .video-wrapper {
@@ -449,3 +450,40 @@ input[type=\"range\"] {
     font-size: 1em;
     cursor: pointer;
 }
+
+.flavor-text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+  
+  .ingredients-text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+  
+  .progress-container {
+    width: 50%; 
+    margin: 20px auto; /* center horizontally */
+    background-color: #e0e0e0;
+    border-radius: 20px;
+    height: 30px;
+    overflow: hidden;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    background-color: orangered;
+    width: 0%; /* will dynamically change */
+    border-radius: 20px 0 0 20px;
+    transition: width 0.5s ease-in-out;
+  }
+  .progress-text {
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    pointer-events: none;
+  }
