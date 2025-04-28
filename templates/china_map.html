@@ -29,12 +29,11 @@
     </div>
   
     <div class="progress-container">
-      <label for="progress">Progress Bar</label>
-      <input type="range" id="progress" min="0" max="{{ max_progress }}" value="{{ progress }}" disabled>
-      <div class="progress-labels">
-        <span>0</span>
-        <span>{{ max_progress }}</span>
+      <div class="progress-bar" style="width: {{ progress * 20 }}%;">
+        <span class="progress-text">{{ progress }}/5 Regions</span>
       </div>
     </div>
+    
+    
   </div>
 {% endblock %}
