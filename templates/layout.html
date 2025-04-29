@@ -14,7 +14,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
     <title>Chinese Regional Cuisines</title>
     <style>
@@ -28,62 +28,86 @@
           background-size: cover;
           background-image: url('{{ url_for("static", filename="media/background.jpg") }}');
           background-position: 0% 27%;
-          /*filter: grayscale(100%);  Apply grayscale and brightness */
-          opacity: 0.35; /* Make the image transparent without affecting the text */
-          z-index: -1; /* Ensure it stays behind the content */
+          opacity: 0.35;
+          z-index: -1;
       }
     </style>
   </head>
   <body>
+    {% if not hide_top_banner %}
     <div class="background">
       <div class="container">
         <h1>The Rich Flavors of Chinese Regional Cuisines</h1>
         <p>Discover the tastes of China and your favorite dishes with food lovers from around the globe!</p>
       </div>
     </div>
+    {% endif %}
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="container d-flex align-items-center">
-        <div class="brand-group d-flex align-items-center">
-          <a class="navbar-brand" href="/">Chinese Cuisine Explorer</a>
-          <a class="view-map" href="{{ url_for('china_map') }}">Map</a>
-          <!-- <a class="view-journal">Journal</a> -->
-          <div class="nav-item dropdown"> 
-            <a
-              class="nav-link dropdown-toggle view-journal"
-              href="#"
-              id="journalDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Journal
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="journalDropdown">
-              {% for region_name in regions.keys() %}
-                <li>
-                  <a
-                    class="dropdown-item"
-                    href="{{ url_for('view_journal', region=region_name|lower) }}"
-                  >
-                    {{ region_name }}
-                  </a>
-                </li>
-              {% endfor %}
-            </ul>
-          </div> <!-- end dropdown -->
+    {% if is_homepage %}
+      <nav class="navbar navbar-expand-lg navbar-dark nav-home w-100 position-absolute">
+        <div class="d-flex justify-content-between align-items-center w-100 px-4">
+          <div class="brand-group d-flex align-items-center">
+            <a class="navbar-brand" href="/">Chinese Cuisine Explorer</a>
+            <a class="nav-link view-map" href="{{ url_for('china_map') }}">Map</a>
+            <div class="nav-item dropdown"> 
+              <a class="nav-link dropdown-toggle view-journal" href="#" id="journalDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Journal
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="journalDropdown">
+                {% for region_name in regions.keys() %}
+                  <li>
+                    <a class="dropdown-item" href="{{ url_for('view_journal', region=region_name|lower) }}">{{ region_name }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
         </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>      
-    </nav>
+      </nav>
+    {% else %}
+      <nav class="navbar navbar-expand-lg {% if nav_class %}{{ nav_class }}{% else %}navbar-light{% endif %}">
+        <div class="container d-flex align-items-center">
+          <div class="brand-group d-flex align-items-center">
+            <a class="navbar-brand" href="/">Chinese Cuisine Explorer</a>
+            <a class="view-map" href="{{ url_for('china_map') }}">Map</a>
+            <div class="nav-item dropdown"> 
+              <a class="nav-link dropdown-toggle view-journal" href="#" id="journalDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Journal
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="journalDropdown">
+                {% for region_name in regions.keys() %}
+                  <li>
+                    <a class="dropdown-item" href="{{ url_for('view_journal', region=region_name|lower) }}">{{ region_name }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+    {% endif %}
 
-    <div class="container">   
-        {% block content %}
-        {% endblock %}
-    </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-…" crossorigin="anonymous"></script>
+    {% if is_homepage %}
+      <!-- No container for homepage -->
+    {% else %}
+      <div class="container">
+    {% endif %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% if not is_homepage %}
+      </div>  <!-- close container only if not homepage -->
+    {% endif %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
   </body>
 </html>
+

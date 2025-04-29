@@ -12,7 +12,10 @@ def inject_regions():
 
 @app.route('/')
 def home():
-    return render_template('home.html')  
+    return render_template('home.html', hide_top_banner=True, nav_class='nav-home', is_homepage=True)
+
+
+
 
 @app.route('/china-map')
 def china_map():
