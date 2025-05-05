@@ -101,6 +101,10 @@ def view_journal(region):
     latest_answers=latest_answers
   )
 
+@app.route("/reset-progress", methods=["POST"])
+def reset_progress_route():
+    data_loader.reset_progress()
+    return redirect(url_for("home"))
 
 if __name__ == '__main__':
     app.run(debug=True, port=5001)

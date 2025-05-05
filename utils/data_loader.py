@@ -1,5 +1,6 @@
 import json
 import os
+from pathlib import Path
 
 # Paths to data files
 REGIONS_PATH = os.path.join('data', 'regions.json')
@@ -134,3 +135,25 @@ def set_region_status(region_name, status=True):
     if region_name in regions:
         regions[region_name]['status'] = status
         save_all_regions(regions)
+
+
+def reset_progress(
+    regions_path: Path = Path("data/regions.json"),
+    journals_path: Path = Path("data/journals.json")
+):
+    # 1) Reset all regions’ status → False
+    regions = json.loads(regions_path.read_text(encoding="utf-8"))
+    for meta in regions.values():
+        meta["status"] = False
+    regions_path.write_text(
+        json.dumps(regions, ensure_ascii=False, indent=2),
+        encoding="utf-8"
+    )
+
+    # 2) Clear out all journal entries
+    journals = json.loads(journals_path.read_text(encoding="utf-8"))
+    empty_journals = { region: [] for region in journals.keys() }
+    journals_path.write_text(
+        json.dumps(empty_journals, ensure_ascii=False, indent=2),
+        encoding="utf-8"
+    )
