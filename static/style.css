@@ -523,4 +523,27 @@ html, body {
   
 }
 
+.hero-button.secondary {
+    padding: 0.8rem 1.5rem;
+    background-color: #f53409;
+    color: white;
+    border: none;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+  }
+  
+  .hero-button.secondary:hover {
+    background-color: #f80404;
+  }
+/* make sure your page wrapper is positioned relative or static */
+.footer-reset {
+    position: fixed;       /* sticks to the viewport */
+    bottom: 1.5rem;        /* distance from bottom edge */
+    left: 50%;             /* center horizontally */
+    transform: translateX(-50%);
+    z-index: 200;          /* above most content */
+    text-align: center;
+  }
   

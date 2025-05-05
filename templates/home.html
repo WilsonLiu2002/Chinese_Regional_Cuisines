@@ -2,14 +2,26 @@
 
 {% block content %}
   <div class="hero-section">
-    <img src="{{ url_for('static', filename='media/home_image.jpeg') }}" class="hero-background" alt="Chinese dishes">
+    <img src="{{ url_for('static', filename='media/home_image.jpeg') }}"
+         class="hero-background" alt="Chinese dishes">
 
-    <!-- THIS IS IMPORTANT: overlay must be inside hero-section -->
     <div class="hero-overlay">
       <h1 class="hero-title">Chinese Regional Cuisines</h1>
-      <a href="{{ url_for('china_map') }}" class="hero-button">Explore Specific Cuisines</a>
-    </div>
+      <a href="{{ url_for('china_map') }}" class="hero-button">
+        Explore Specific Cuisines
+      </a>
+
+  </div>
+
+  <!-- Restart button footer -->
+  <div class="footer-reset">
+    <form action="{{ url_for('reset_progress_route') }}" method="post">
+      <button type="submit" class="hero-button secondary">
+        🔄 Restart Learning
+      </button>
+    </form>
   </div>
 {% endblock %}
+
 
 
