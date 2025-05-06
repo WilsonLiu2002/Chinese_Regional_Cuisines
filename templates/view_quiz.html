@@ -29,8 +29,28 @@
 
           <div id="bowl-container">
             <div id="bowl"></div>
+
+            <div id="cook-overlay-{{ q.id }}" class="cook-overlay" style="display:none;">
+              <div class="cook-image-wrapper">
+                <img
+                  src="{{ url_for('static', filename='media/drag_drop/' ~ q.cook.filename) }}"
+                  alt="Cooked Dish"
+                />
+                <button class="close-overlay" aria-label="Close">×</button>
+              </div>
+            </div>
+            
           </div>
           <div id="message">✅ Correct!</div>
+
+          <!-- Cook button, hidden until success -->
+          <button
+            id="cook-btn-{{ q.id }}"
+            class="cook-btn"
+            style="display:none;"
+          >
+            Cook
+          </button>
 
         {% elif q.type == 'multiple_choice' %}
           <form class="mcq-form" data-answer="{{ q.answer }}" data-mp-id="{{ q.id }}">
