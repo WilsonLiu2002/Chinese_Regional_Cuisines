@@ -6,6 +6,13 @@
         "q1": "",
         "q2": ""
       }
+    },
+    {
+      "answers": {
+        "q0": "Yes, but I don't like the flavor of lamb.",
+        "q1": "I'm pretty okay with spicy food.",
+        "q2": "I prefer milder flavors"
+      }
     }
   ],
   "Guangdong": [
@@ -15,6 +22,13 @@
         "q1": "",
         "q2": ""
       }
+    },
+    {
+      "answers": {
+        "q0": "These are actually very similar what I eat usually, but since I'm from Jiangnan, the food from my hometown is sweeter.",
+        "q1": "Yes, pork ribs are my favorite.",
+        "q2": "I like mild and delicate dishes."
+      }
     }
   ],
   "Dongbei": [
@@ -23,6 +37,13 @@
         "q0": "",
         "q1": "",
         "q2": ""
+      }
+    },
+    {
+      "answers": {
+        "q0": "Yes, I like a big pot of food.",
+        "q1": "Not very common, but I do like these two foods.",
+        "q2": "I'm not too used of pickled vegetables, but I would like to try more of them."
       }
     }
   ],
@@ -40,6 +61,13 @@
         "q1": "",
         "q2": ""
       }
+    },
+    {
+      "answers": {
+        "q0": "I'm okay with spicy food, but I'm not a fan of spiciness.",
+        "q1": "Yes! It's a very unique flavor.",
+        "q2": "Lighter, subtler tastes."
+      }
     }
   ],
   "Jiangnan": [
@@ -48,6 +76,13 @@
         "q0": "",
         "q1": "",
         "q2": ""
+      }
+    },
+    {
+      "answers": {
+        "q0": "Milder flavors!",
+        "q1": "I love sweet rice dumplings! Especially during Lantern Festival!",
+        "q2": "Yes, I enjoy seafood"
       }
     }
   ]

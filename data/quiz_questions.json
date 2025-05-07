@@ -44,7 +44,7 @@
         "prompt": "Which of the four dishes come from Guangdong?",
         "options": [
             {"value":"basi_sweet_potato", "label":"A. Basi Sweet Potato (拔丝土豆)", "filename":"mp1/basi_sweet_potato.png", "video_link": "https://www.youtube.com/embed/B_GyvCXeXpw?si=KLSA--_L4sg8tRdy"},
-            {"value":"boiled_beef", "label":"B. Sichuan Boiled Beef (水煮牛肉)", "filename":"mp1/boilded_beef.png", "video_link": "https://www.youtube.com/embed/k0rRmQ652go?si=TjnTv6GUExrMMY7c"},
+            {"value":"boiled_beef", "label":"B. Boiled Beef (水煮牛肉)", "filename":"mp1/boilded_beef.png", "video_link": "https://www.youtube.com/embed/k0rRmQ652go?si=TjnTv6GUExrMMY7c"},
             {"value":"dong_po_rou", "label":"C. DongPo Pork (东坡肉)", "filename":"mp1/dong_po_rou.png", "video_link": "https://www.youtube.com/embed/vGuIdi__4kY?si=CM8q-KjVVYYGjApU"},
             {"value":"roasted_goose", "label":"D. Roasted Goose (烧鹅)", "filename":"mp1/roasted_goose.png", "video_link": "https://www.youtube.com/embed/_I6byfR6iZI?si=euDhicg_0i3SEeNa"}
         ],
@@ -58,7 +58,7 @@
         "prompt": "Which of the four dishes come from Dongbei?",
         "options": [
             {"value":"baiqie_chicken", "label":"A. Plain Poached Chicken (白切鸡)", "filename":"mp2/baiqie_chicken.png", "video_link": "https://www.youtube.com/embed/S0zlv1KoKkY?si=pnLAZhDvpeWDsChP"},
-            {"value":"boiled_fish", "label":"B. Sichuan Spicy Fish (水煮鱼)", "filename":"mp2/boiled_fish.png", "video_link": "https://www.youtube.com/embed/C3BbIP6E_Bs?si=9FBm5yQQukL9exFn"},
+            {"value":"boiled_fish", "label":"B. Spicy Fish (水煮鱼)", "filename":"mp2/boiled_fish.png", "video_link": "https://www.youtube.com/embed/C3BbIP6E_Bs?si=9FBm5yQQukL9exFn"},
             {"value":"stewed_goose", "label":"C. Iron Pot Braised Goose (铁锅炖大鹅)", "filename":"mp2/stewed_goose.png", "video_link": "https://www.youtube.com/embed/iJ9HGtx5wT0?si=gT-acbW0w_eJ70Dn"},
             {"value":"xihucuyu", "label":"D. West Lake Vinegar Fish (西湖醋鱼)", "filename":"mp2/xihucuyu.png", "video_link": "https://www.youtube.com/embed/SCVx-nouNjs?si=HhqPnaaZP9vZ_h7X"}
         ],
