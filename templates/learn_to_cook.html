@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<div class="culture-container">
+  <div class="culture-content">
+    <h1 class="region-title">{{ dish_label }}</h1>
+    <hr class="title-separator">
+
+    <div class="video-wrapper">
+      <iframe width="960" height="540"
+              src="https://www.youtube.com/embed/{{ video_link.split('?')[0].split('/')[-1] }}"
+              title="Cooking Video" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+  
+  <div class="nav-links">
+    <div class="previous-page">
+      <a href="{{ url_for('view_quiz', region=region|lower) }}">&lt; Back to Quiz</a>
+    </div>
+    <div class="next-page">
+        <a href="{{ url_for('view_journal', region=region|lower) }}">Complete the Journal &gt;</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

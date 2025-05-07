@@ -43,10 +43,10 @@
         "type": "multiple_choice",
         "prompt": "Which of the four dishes come from Guangdong?",
         "options": [
-            {"value":"basi_sweet_potato", "label":"A. Basi Sweet Potato (拔丝土豆)", "filename":"mp1/basi_sweet_potato.png"},
-            {"value":"boiled_beef", "label":"B. Sichuan Boiled Beef (水煮牛肉)", "filename":"mp1/boilded_beef.png"},
-            {"value":"dong_po_rou", "label":"C. DongPo Pork (东坡肉)", "filename":"mp1/dong_po_rou.png"},
-            {"value":"roasted_goose", "label":"D. Roasted Goose (烧鹅)", "filename":"mp1/roasted_goose.png"}
+            {"value":"basi_sweet_potato", "label":"A. Basi Sweet Potato (拔丝土豆)", "filename":"mp1/basi_sweet_potato.png", "video_link": "https://www.youtube.com/watch?v=B_GyvCXeXpw"},
+            {"value":"boiled_beef", "label":"B. Sichuan Boiled Beef (水煮牛肉)", "filename":"mp1/boilded_beef.png", "video_link": "https://www.youtube.com/watch?v=k0rRmQ652go"},
+            {"value":"dong_po_rou", "label":"C. DongPo Pork (东坡肉)", "filename":"mp1/dong_po_rou.png", "video_link": "https://www.youtube.com/watch?v=vGuIdi__4kY"},
+            {"value":"roasted_goose", "label":"D. Roasted Goose (烧鹅)", "filename":"mp1/roasted_goose.png", "video_link": "https://www.youtube.com/watch?v=_I6byfR6iZI"}
         ],
         "answer": "roasted_goose"
       }
@@ -57,10 +57,10 @@
         "type": "multiple_choice",
         "prompt": "Which of the four dishes come from Dongbei?",
         "options": [
-            {"value":"baiqie_chicken", "label":"A. Plain Poached Chicken (白切鸡)", "filename":"mp2/baiqie_chicken.png"},
-            {"value":"boiled_fish", "label":"B. Sichuan Spicy Fish (水煮鱼)", "filename":"mp2/boiled_fish.png"},
-            {"value":"stewed_goose", "label":"C. Iron Pot Braised Goose (铁锅炖大鹅)", "filename":"mp2/stewed_goose.png"},
-            {"value":"xihucuyu", "label":"D. West Lake Vinegar Fish (西湖醋鱼)", "filename":"mp2/xihucuyu.png"}
+            {"value":"baiqie_chicken", "label":"A. Plain Poached Chicken (白切鸡)", "filename":"mp2/baiqie_chicken.png", "video_link": "https://www.youtube.com/watch?v=S0zlv1KoKkY"},
+            {"value":"boiled_fish", "label":"B. Sichuan Spicy Fish (水煮鱼)", "filename":"mp2/boiled_fish.png", "video_link": "https://www.youtube.com/watch?v=C3BbIP6E_Bs"},
+            {"value":"stewed_goose", "label":"C. Iron Pot Braised Goose (铁锅炖大鹅)", "filename":"mp2/stewed_goose.png", "video_link": "https://www.youtube.com/watch?v=iJ9HGtx5wT0"},
+            {"value":"xihucuyu", "label":"D. West Lake Vinegar Fish (西湖醋鱼)", "filename":"mp2/xihucuyu.png", "video_link": "https://www.youtube.com/watch?v=SCVx-nouNjs"}
         ],
         "answer": "stewed_goose"
       }
@@ -71,10 +71,10 @@
         "type": "multiple_choice",
         "prompt": "Which of the four dishes come from Xinjiang?",
         "options": [
-            {"value":"kaobaozi", "label":"A. Baked Lamb Buns (烤包子)", "filename":"mp3/kaobaozi.png"},
-            {"value":"longjing_shrimp", "label":"B. Longjing Shrimp (龙井虾仁)", "filename":"mp3/longjing_shrimp.png"},
-            {"value":"roasted_pork", "label":"C. Roasted Pork (烤猪肉)", "filename":"mp3/roasted_pork.png"},
-            {"value":"suancai_paigu", "label":"D. Pork Ribs with Pickled Cabbage (酸菜排骨)", "filename":"mp3/suancai_paigu.png"}
+            {"value":"kaobaozi", "label":"A. Baked Lamb Buns (烤包子)", "filename":"mp3/kaobaozi.png", "video_link": "https://www.youtube.com/watch?v=58WzyEK4Z1o"},
+            {"value":"longjing_shrimp", "label":"B. Longjing Shrimp (龙井虾仁)", "filename":"mp3/longjing_shrimp.png", "video_link": "https://www.youtube.com/watch?v=_SJ80RChp4I"},
+            {"value":"roasted_pork", "label":"C. Roasted Pork (烤猪肉)", "filename":"mp3/roasted_pork.png", "video_link": "https://www.youtube.com/watch?v=WBoGEMSZ0zk"},
+            {"value":"suancai_paigu", "label":"D. Pork Ribs with Pickled Cabbage (酸菜排骨)", "filename":"mp3/suancai_paigu.png", "video_link": "https://www.youtube.com/watch?v=w9lN_FcahOk"}
         ],
         "answer": "kaobaozi"
       }

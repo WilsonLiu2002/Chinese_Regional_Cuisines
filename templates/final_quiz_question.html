@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<!-- Inject correct region and explanations for JS -->
+<body data-correct-region="{{ question.correct_region }}" data-idx="{{ idx }}">
+
+<!-- Preload explanation JSON for JS -->
+<script id="explanations-json" type="application/json">
+  {{ question.explanations | tojson }}
+</script>
+
+<div class="quiz-map-page">
+
+  <!-- Two-column layout -->
+  <div class="quiz-main-content">
+
+    <!-- LEFT: Map and feedback -->
+    <div class="quiz-map-column">
+      {% include "final_quiz_map.html" %}
+
+      {% if explanation %}
+    <div class="map-feedback {{ 'correct' if is_correct else 'incorrect' }}">
+        {{ explanation }}
+    </div>
+    {% endif %}
+    </div>
+
+    <!-- RIGHT: Question header and dish info -->
+    <div class="quiz-info-column">
+        <div class="quiz-info-inner">
+          <div class="question-header">
+            <h3><u>Question {{ idx }}</u></h3>
+            <p>Click on the region where you think the dish is from on the map.</p>
+          </div>
+      
+          <div class="dish-info">
+            <img src="{{ url_for('static', filename='media/final_quiz/' ~ question.image) }}"
+                 alt="{{ question.dish_name }}">
+            <h4><strong>{{ question.dish_name }}</strong> ({{ question.dish_name_zh }})</h4>
+            <p class="dish-intro">{{ question.dish_intro }}</p>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="quiz-footer">
+    <div class="score-display">Score: {{ score }}/{{ total }}</div>
+  </div>
+
+  <div class="nav-links">
+    <!-- Navigation buttons go here -->
+    <div class="previous-page">
+        <a href="{{ url_for('final_quiz_question', region=region|lower, idx=idx-1) }}" {% if idx == 1 %}class="disabled"{% endif %}>&lt; Previous</a>
+    </div>
+    {% if idx < total %}
+    <div class="next-page">
+        <a href="{{ url_for('final_quiz_question', idx=idx+1) }}">Next &gt;</a>
+    </div>
+    {% else %}
+    <div class="next-page">
+        <a href="{{ url_for('final_quiz_result') }}">Finish &gt;</a>
+    </div>
+    {% endif %}
+  </div>
+
+  <!-- <div class="nav-links">
+    <div class="previous-page">
+      <a href="{{ url_for('view_culture', region=region|lower) }}">&lt; Back to Culture</a>
+    </div>
+    <div class="next-page">
+      <a href="{{ url_for('view_quiz', region=region|lower) }}">Take a Short Quiz &gt;</a>
+    </div>
+  </div> -->
+</div>
+
+<script src="{{ url_for('static', filename='final_quiz.js') }}"></script>
+{% endblock %}

@@ -3,7 +3,7 @@
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
-<div class="quiz-container">
+<div class="quiz-container" data-region="{{ region }}">
 
     <div class="previous-page">
         <a href="{{ url_for('view_cuisine', region=region|lower) }}">&lt; Review</a>
@@ -56,22 +56,24 @@
           <form class="mcq-form" data-answer="{{ q.answer }}" data-mp-id="{{ q.id }}">
             <div class="mc-options">
               {% for opt in q.options %}
-                <div class="option">
-                  <img
-                    src="{{ url_for('static',
-                                    filename='media/' ~ opt.filename) }}"
-                    alt="{{ opt.label }}">
-                  <label>
-                    <input type="radio"
-                           name="{{ q.id }}"
-                           value="{{ opt.value }}">
-                    {{ opt.label }}
-                  </label>
+              <label class="option">
+                <img src="{{ url_for('static', filename='media/' ~ opt.filename) }}" alt="{{ opt.label }}">
+                <div class="radio-label-group">
+                  <input type="radio" name="{{ q.id }}" value="{{ opt.value }}">
+                  <span class="option-label">{{ opt.label }}</span>
                 </div>
+              </label>                                 
               {% endfor %}
             </div>
             <button type="button" class="check-answer">Check Answer</button>
             <div class="mcq-feedback"></div>
+            <div class="learn-btn-wrapper">
+              <button type="button"
+                      class="learn-to-cook-btn"
+                      style="display: none;">
+                🍳 Learn to Cook
+              </button>
+            </div>            
           </form>
         {% endif %}
       </section>

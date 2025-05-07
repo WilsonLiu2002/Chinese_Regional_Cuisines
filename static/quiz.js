@@ -94,41 +94,53 @@ $(function() {
     });
   
     // --- Multiple Choice Logic with Feedback ---
-    $('.check-answer').click(function() {
+    $(document).ready(function () {
+      $('.check-answer').click(function () {
         const $form     = $(this).closest('.mcq-form');
         const mpId      = $form.data('mp-id');
-        const correct   = $form.data('answer');       // e.g. "roasted_goose"
+        const correct   = $form.data('answer');
         const $inputs   = $form.find('input[type=radio]');
         const pickedVal = $inputs.filter(':checked').val();
         const $fb       = $form.find('.mcq-feedback');
-      
+        const $learnBtn = $form.find('.learn-to-cook-btn');
+        const region    = $form.closest('.quiz-container').data('region');
+    
         if (!pickedVal) {
-          return $fb.text('Please select one.').css('color','orange');
+          $learnBtn.hide();
+          return $fb.text('Please select one.').css('color', 'orange');
         }
-      
-        // Get the letter A/B/C/D from the index
+    
+        // Get letter A/B/C/D for feedback lookup
         const idx    = $inputs.index($inputs.filter(':checked'));
-        const letter = String.fromCharCode(65 + idx); // 65 → "A"
-      
-        // Lookup your detailed feedback
-        const mpFeed = (FEEDBACK_DATA[mpId]||{})[letter];
-      
-        // Determine correctness *by comparing the values*, not the letters
+        const letter = String.fromCharCode(65 + idx);
+        const mpFeed = (FEEDBACK_DATA[mpId] || {})[letter];
         const isCorrect = pickedVal === correct;
-      
+    
+        // Display feedback
         if (mpFeed) {
-          // Prepend the appropriate emoji
           const prefix = isCorrect ? '✅ ' : '❌ ';
-          $fb.text(prefix + mpFeed)
-            .css('color', isCorrect ? 'green' : 'red');
+          $fb.text(prefix + mpFeed).css('color', isCorrect ? 'green' : 'red');
         } else {
-          // Fallback if no feedback text found
           if (isCorrect) {
-            $fb.text('✅ Correct!').css('color','green');
+            $fb.text('✅ Correct!').css('color', 'green');
           } else {
-            $fb.text(`❌ Nope, the answer is "${correct}".`)
-              .css('color','red');
+            $fb.text(`❌ Nope, the answer is "${correct}".`).css('color', 'red');
           }
         }
-    }); 
+    
+        // Show Learn to Cook button with correct link
+        const $label    = $inputs.filter(':checked').closest('label.option');
+        const dishValue = $inputs.filter(':checked').val();
+    
+        if (region && dishValue) {
+          const link = `/learn/${region}/${dishValue}`;
+          $learnBtn
+            .off('click')
+            .on('click', () => window.location.href = link)
+            .show();
+        } else {
+          $learnBtn.hide();
+        }
+      });
+    });     
 });  

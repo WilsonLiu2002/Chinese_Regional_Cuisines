@@ -1,9 +1,18 @@
-from flask import Flask, render_template, jsonify, request, redirect, url_for
+from flask import Flask, render_template, jsonify, request, redirect, url_for, session
 import json
 import os
+import re
 from utils import data_loader
+import secrets
+
+with open(os.path.join("data", "quiz_questions.json"), "r", encoding="utf-8") as f:
+    QUIZ_DATA = json.load(f)
+
+with open('data/final_quiz.json', 'r', encoding='utf-8') as f:
+    FINAL_QUIZ = json.load(f)
 
 app = Flask(__name__)
+app.secret_key = secrets.token_hex(16)
 
 @app.context_processor
 def inject_regions():
@@ -63,15 +72,41 @@ def view_cuisine(region):
 @app.route('/quiz/<region>', methods=['GET'])
 def view_quiz(region):
     region_key = region.capitalize()
+    idx = int(request.args.get('idx', 1))  # default to 1
 
     with open('data/regions.json', 'r') as f:
         regions = json.load(f)
 
-    # load this region’s quiz
     quiz = data_loader.get_quiz_for_region(region_key)
     feedback = data_loader.load_feedback()
 
-    return render_template('view_quiz.html', region=region_key, regions=regions, quiz=quiz, feedback=feedback)
+    return render_template('view_quiz.html',
+                           region=region_key,
+                           regions=regions,
+                           quiz=quiz,
+                           feedback=feedback,
+                           idx=idx)
+
+@app.route("/learn/<region>/<dish_value>")
+def learn_to_cook(region, dish_value):
+    # Search all questions in the region for the selected dish
+    region_questions = QUIZ_DATA.get(region, [])
+    option = next(
+        (opt for q in region_questions for opt in q["options"] if opt["value"] == dish_value),
+        None
+    )
+
+    if not option:
+        return "Dish not found", 404
+
+    video_link = option["video_link"]
+    raw_label = option["label"]
+    dish_label = re.sub(r'^[A-D]\.\s*', '', raw_label)
+
+    return render_template("learn_to_cook.html",
+                           region=region,
+                           dish_label=dish_label,
+                           video_link=video_link)
 
 @app.route('/journal/<region>', methods=['GET', 'POST'])
 def view_journal(region):
@@ -100,6 +135,63 @@ def view_journal(region):
     questions=questions,
     latest_answers=latest_answers
   )
+
+@app.route("/final_quiz/start")
+def final_quiz_intro():
+    session.pop('final_quiz_score', None)
+    session.pop('answered', None)
+    return render_template("final_quiz_intro.html", FINAL_QUIZ = FINAL_QUIZ)
+
+@app.route("/final_quiz/question/<int:idx>")
+def final_quiz_question(idx):
+    with open("data/final_quiz.json", "r", encoding="utf-8") as f:
+        FINAL_QUIZ = json.load(f)
+
+    total = len(FINAL_QUIZ)
+    if idx < 1 or idx > total:
+        return redirect(url_for("final_quiz_intro"))
+
+    question = FINAL_QUIZ[idx - 1]
+    selected = request.args.get("selected_region")
+
+    # ✅ Init score and answered state at the beginning
+    if idx == 1 and 'final_quiz_score' not in session:
+        session['final_quiz_score'] = 0
+        session['answered'] = {}
+
+    explanation = None
+    is_correct = None
+
+    if selected:
+        is_correct = selected == question["correct_region"]
+        explanation = question["explanations"].get(selected, "No explanation available.")
+
+        # ✅ Only count score the first time this question is answered
+        if str(idx) not in session['answered']:
+            session['answered'][str(idx)] = True
+            if is_correct:
+                session['final_quiz_score'] += 1
+
+    return render_template(
+        "final_quiz_question.html",
+        question=question,
+        idx=idx,
+        total=total,
+        selected=selected,
+        is_correct=is_correct,
+        explanation=explanation,
+        score=session.get('final_quiz_score', 0)
+    )
+
+@app.route("/final_quiz/result")
+def final_quiz_result():
+    with open("data/final_quiz.json", "r", encoding="utf-8") as f:
+        FINAL_QUIZ = json.load(f)
+
+    score = session.get('final_quiz_score', 0)
+    total = len(FINAL_QUIZ)
+
+    return render_template("final_quiz_result.html", score=score, total=total)
 
 @app.route("/reset-progress", methods=["POST"])
 def reset_progress_route():

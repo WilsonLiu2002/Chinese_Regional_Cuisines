@@ -1,0 +1,7 @@
+<div class="map-container">
+    <img src="{{ url_for('static', filename='media/map.png') }}" alt="China map" class="china-map">
+  
+    {% for region in ['Jiangnan', 'Sichuan', 'Dongbei', 'Guangdong', 'Xinjiang'] %}
+      <div class="dot dot-{{ region|lower }}" data-region="{{ region }}"></div>
+    {% endfor %}
+  </div>  

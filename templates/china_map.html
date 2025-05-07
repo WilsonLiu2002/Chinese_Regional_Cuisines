@@ -34,6 +34,11 @@
       </div>
     </div>
     
+    {% if progress >= 5 %}
+    <div class="final-quiz-entry">
+        <a href="{{ url_for('final_quiz_intro') }}">Take the Final Quiz &gt;</a>
+    </div>
+    {% endif %}
     
   </div>
 {% endblock %}

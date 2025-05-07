@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container text-center" style="padding: 100px 20px;">
+  <h2>Your Final Score is {{ score }}/{{ total }}!</h2>
+  <h3>Congratulations!</h3>
+
+  <div class="final-score-buttons">
+    <a href="{{ url_for('final_quiz_intro') }}" class="btn btn-primary redo-btn">Redo the Quiz</a>
+    <a href="{{ url_for('home') }}" class="btn btn-success home-btn">Back to Home</a>
+  </div>
+</div>
+{% endblock %}

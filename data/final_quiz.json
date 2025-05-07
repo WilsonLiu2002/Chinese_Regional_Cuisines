@@ -1,0 +1,48 @@
+[
+    {
+      "id": 1,
+      "dish_name": "Steamed Crab with Rice Wine",
+      "dish_name_zh": "清蒸花蟹",
+      "image": "jiangnan_crab.png",
+      "correct_region": "Jiangnan",
+      "dish_intro": "Steamed Crab with Rice Wine features fresh crab steamed with Shaoxing wine and ginger. The wine enhances the natural sweetness of the crab, while the steaming process preserves its delicate, tender texture.",
+      "explanations": {
+        "Jiangnan": "✅ This is the correct answer! Steamed Crab with Rice Wine is from Jiangnan due to its mild flavors, focus on Shaoxing wine and ginger, and because crab is a representative ingredient of the region.",
+        "Sichuan": "❌ Sichuan cuisine is known for its bold, spicy flavors with chili peppers and Sichuan peppercorns.",
+        "Dongbei": "❌ Dongbei cuisine features hearty, warming dishes suited for cold climates — not seafood-based dishes like crab.",
+        "Guangdong": "❌ While Guangdong is near the coast, its flavors are lighter and dim sum-oriented rather than wine-steamed crab.",
+        "Xinjiang": "❌ Xinjiang cuisine focuses on lamb, cumin, and Central Asian influences — not seafood dishes like this one."
+      }
+    },
+    {
+        "id": 2,
+        "dish_name": "Twice-Cooked Pork",
+        "dish_name_zh": "回锅肉",
+        "image": "sichuan_twice_cooked_pork.png",
+        "correct_region": "Sichuan",
+        "dish_intro": "Twice-Cooked Pork features pork belly that is first boiled and then stir-fried with fermented bean paste, chili peppers, and Sichuan peppercorns. The dish delivers a savory, spicy flavor with a tender texture, enhanced by the bold and numbing flavors of Sichuan spices.",
+        "explanations": {
+          "Jiangnan": "❌ Jiangnan cuisine is known for mild, sweet flavors and would rarely feature bold spicy pork like this.",
+          "Sichuan": "✅ Correct! Twice-Cooked Pork is a classic Sichuan dish, famous for its spicy, fragrant, and numbing taste.",
+          "Dongbei": "❌ Dongbei cuisine leans toward hearty stews and braised meats, but not spicy stir-fried pork like this.",
+          "Guangdong": "❌ Guangdong cuisine focuses on subtle, light flavors and wouldn’t use chili peppers this heavily.",
+          "Xinjiang": "❌ Xinjiang cuisine is centered on lamb, cumin, and grilling — not stir-fried pork dishes."
+        }
+    },
+    {
+        "id": 3,
+        "dish_name": "Samsa",
+        "dish_name_zh": "萨姆萨",
+        "image": "xinjiang_samsa.png",
+        "correct_region": "Xinjiang",
+        "dish_intro": "Samsa is a savory pastry filled with lamb, onions, and spices like cumin and chili, capturing the bold, aromatic flavors common in the region. Its flaky crust holds a rich, tender filling, highlighting the use of lamb and spices in local dishes.",
+        "explanations": {
+          "Jiangnan": "❌ Jiangnan cuisine is known for mild and sweet flavors, and does not typically include rich, spiced lamb pastries like this.",
+          "Sichuan": "❌ While Sichuan food is bold and spicy, its focus is on stir-fries and peppercorn heat — not baked lamb pastries.",
+          "Dongbei": "❌ Dongbei cuisine emphasizes hearty stews and boiled dumplings rather than baked dishes with lamb and cumin.",
+          "Guangdong": "❌ Guangdong cuisine focuses on delicate seafood and light stir-fries, not savory pastries like Samsa.",
+          "Xinjiang": "✅ Correct! Samsa is a traditional baked pastry from Xinjiang, known for its flaky crust and spiced lamb filling."
+        }
+      }         
+  ]
+  
