@@ -22,7 +22,7 @@
       {
         "id": "q1",
         "type": "dragdrop",
-        "prompt": "Drag the ingredients commonly used in Jiangnan Cuisines into the bowl (drag 5 items).",
+        "prompt": "Drag the ingredients commonly used in Sichuan Cuisines into the bowl (drag 5 items).",
         "options": [
             {"filename":"chili_peper.png","correct":true},
             {"filename":"crab.png","correct":false},
