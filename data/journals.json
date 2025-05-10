@@ -2,22 +2,46 @@
   "Xinjiang": [
     {
       "answers": {
-        "q0": "I don't like the flavor of lamb.",
-        "q1": "I'm okay but I don't like it.",
-        "q2": "Lighter and milder flavors."
+        "q0": "",
+        "q1": "",
+        "q2": ""
       }
     }
   ],
-  "Guangdong": [],
+  "Guangdong": [
+    {
+      "answers": {
+        "q0": "",
+        "q1": "",
+        "q2": ""
+      }
+    }
+  ],
   "Dongbei": [
     {
       "answers": {
-        "q0": "Yes, I like salty food as well.",
-        "q1": "They are not common in my home cuisine, but I have had these foods very often and I like them.",
-        "q2": "Not too used to this kind of flavors."
+        "q0": "",
+        "q1": "",
+        "q2": ""
       }
     }
   ],
-  "Sichuan": [],
-  "Jiangnan": []
+  "Sichuan": [
+    {
+      "answers": {
+        "q0": "",
+        "q1": "",
+        "q2": ""
+      }
+    }
+  ],
+  "Jiangnan": [
+    {
+      "answers": {
+        "q0": "",
+        "q1": "",
+        "q2": ""
+      }
+    }
+  ]
 }

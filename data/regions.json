@@ -3,7 +3,7 @@
     "chinese_name": "江南",
     "flavors": "Jiangnan flavors are known for being light, delicate, and slightly sweet, often featuring fresh seafood, soya-based sauces, and subtle use of vinegar. Dishes are typically steamed or braised, with a focus on umami and tender textures. Seasoning is mild, allowing the natural flavors of the ingredients to shine through.",
     "common_ingredients": "Fish, shrimp, crab, eel, lotus root, bamboo shoots, shiitake mushrooms, soy sauce, sugar, Shaoxing wine, ginger",
-    "status": false,
+    "status": true,
     "culture_video": "https://youtu.be/iCpS6r4cCGw?si=bBMi65CMP-xvPdkZ",
     "demo_dishes": [
       "Sweet Lotus Root (桂花糖藕)",
@@ -15,7 +15,7 @@
     "chinese_name": "四川",
     "flavors": "Sichuan cuisine is known for its bold, intense flavors, particularly its combination of spiciness and numbing sensations. It features the prominent use of chili peppers, Sichuan peppercorns, garlic, and ginger. The cuisine is characterized by its spicy, sour, and umami flavors, with an emphasis on layered heat and rich sauces. Dishes are often stir-fried, steamed, or braised, with a focus on strong, bold tastes that stimulate the palate.",
     "common_ingredients": "Chili peppers, Sichuan peppercorns, garlic, ginger, soy sauce, fermented bean paste (Doubanjiang), tofu, chicken, beef, pork",
-    "status": false,
+    "status": true,
     "culture_video": "https://youtu.be/nZ5EMY06QZc?si=t8hv02upG1KUU2EC",
     "demo_dishes": [
       "Lazi Chicken (辣子鸡)",
@@ -27,7 +27,7 @@
     "chinese_name": "广东",
     "flavors": "Guangdong cuisine is known for its fresh, light flavors, focusing on the natural taste of ingredients. It features a delicate balance of umami, sweet, and savory profiles, with an emphasis on steaming and stir-frying techniques. The cuisine often highlights seafood, chicken, and vegetables, using mild seasonings like soy sauce, ginger, and spring onions to enhance the natural flavors without overwhelming them. Dishes are typically not overly spicy, offering a refined, subtle taste.",
     "common_ingredients": "Soy sauce, ginger, spring onions, garlic, Shaoxing wine, oyster sauce, chicken, seafood, mushrooms, Chinese parsley",
-    "status": false,
+    "status": true,
     "culture_video": "https://youtu.be/iAxIycMqQdk?si=zFmjkk1DL54EPs48",
     "demo_dishes": [
       "Char Siu (叉烧)",

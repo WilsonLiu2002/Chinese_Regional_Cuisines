@@ -20,15 +20,22 @@
   <div class="dishes-section">
     {% for dish in regions[region].demo_dishes %}
       {% set eng_name = dish.split('(')[0].strip() %}
-      {% set filename = eng_name|lower|replace("'", "")|replace(" ", "_")|replace("-", "_")|replace(",", "") + '.png' %}
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            {{ dish }}
+      {% set dish_key = eng_name|lower|replace("'", "")|replace(" ", "_")|replace("-", "_")|replace(",", "") %}
+      {% set filename = dish_key + '.png' %}
+      <div class="dish-card">
+        <div class="flip-card" onclick="toggleAccordion('{{ dish_key }}')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              {{ dish }}
+            </div>
+            <div class="flip-card-back">
+              <img src="/static/media/{{ region }}/{{ filename }}" alt="{{ dish }}">
+            </div>
           </div>
-          <div class="flip-card-back">
-            <img src="/static/media/{{ region }}/{{ filename }}" alt="{{ dish }}">
-          </div>
+        </div>
+
+        <div id="accordion-{{ dish_key }}" class="accordion-panel">
+          <!-- Content filled by JavaScript -->
         </div>
       </div>
     {% endfor %}
@@ -43,5 +50,150 @@
     </div>
   </div>
 </div>
+
+<script>
+// Data for dishes
+const foodDetails = {
+  baked_naan: {
+    pronunciation: "kao nang",
+    story: "Baked Naan symbolizes hospitality. It's a staple at festivals and guest receptions.",
+    cultural_note: "Often shared during important family gatherings and weddings."
+  },
+  grilled_skewers: {
+    pronunciation: "kao chuan",
+    story: "Grilled Skewers are a popular street food, grilled over open flames with spices.",
+    cultural_note: "Commonly eaten during summer night markets and celebrations."
+  },
+  qiegao: {
+    pronunciation: "chee-eh gao",
+    story: "Qiegao is a sweet dense cake made with nuts and fruits, symbolizing good fortune.",
+    cultural_note: "Frequently given as gifts during weddings and New Year festivities."
+  },
+  lazi_chicken: {
+    pronunciation: "laa-dzuh jee",
+    story: "A spicy Sichuan dish made by stir-frying chicken chunks with dried chilis and peppercorns.",
+    cultural_note: "Popular for gatherings and celebrations, symbolizing boldness and excitement."
+  },
+  mapo_tofu: {
+    pronunciation: "maa-poh toh-foo",
+    story: "Famous Sichuan tofu dish invented by a pockmarked ('Ma Po') woman in a Chengdu restaurant.",
+    cultural_note: "Often served at family dinners, representing Sichuan’s signature spicy and numbing flavors."
+  },
+  sichuan_hotpot: {
+    pronunciation: "suh-chwan huo-guo",
+    story: "A communal spicy hotpot experience with rich broth and dipping sauces.",
+    cultural_note: "Essential at winter gatherings, New Year, and social reunions."
+  },
+  dumpling: {
+    pronunciation: "jiao-zi",
+    story: "Dumplings symbolize wealth because they resemble ancient Chinese gold ingots.",
+    cultural_note: "Traditionally eaten during Chinese New Year Eve to bring prosperity."
+  },
+  guo_bao_rou: {
+    pronunciation: "gwoh bao roh",
+    story: "Sweet and sour crispy pork slices invented in Harbin, Northeast China.",
+    cultural_note: "Served during special occasions, symbolizing sweetness and happiness."
+  },
+  braised_pork_ribs_with_green_beans: {
+    pronunciation: "pai-gu dun dou-jiao",
+    story: "Slow-cooked pork ribs with fresh green beans, hearty Northern comfort food.",
+    cultural_note: "A home-style dish often made during family reunions and harvest festivals."
+  },
+  sweet_lotus_root: {
+    pronunciation: "gui-hua ou",
+    story: "Lotus root stuffed with glutinous rice and osmanthus syrup, delicate and floral.",
+    cultural_note: "Eaten during Mid-Autumn Festival and symbolizes purity and unity."
+  },
+  steamed_lions_head_meatballs: {
+    pronunciation: "shi-zi tou",
+    story: "Large, tender meatballs representing a lion’s head for strength and prosperity.",
+    cultural_note: "Commonly served during family banquets and festive gatherings."
+  },
+  squirrel_shaped_mandarin_fish: {
+    pronunciation: "song-shu gui-yu",
+    story: "Fish carved into a squirrel shape, fried until crispy, then topped with sweet-and-sour sauce.",
+    cultural_note: "A banquet centerpiece, symbolizing abundance and good fortune."
+  },
+  char_siu: {
+    pronunciation: "cha shiu",
+    story: "Cantonese-style barbecued pork with a sweet, savory glaze.",
+    cultural_note: "Found in celebrations and daily meals; represents warmth and family bonding."
+  },
+  chow_fun: {
+    pronunciation: "gan-chao niu-he",
+    story: "Stir-fried flat rice noodles with beef, a Guangdong comfort street food.",
+    cultural_note: "A staple in dim sum restaurants and festive menus."
+  },
+  dim_sum: {
+    pronunciation: "dian-xin",
+    story: "Small dishes like dumplings, buns, and sweets, meant for sharing.",
+    cultural_note: "Eaten during morning or afternoon tea ('yum cha') for family and friends gatherings."
+  }
+};
+
+
+function toggleAccordion(dishKey) {
+  const panel = document.getElementById('accordion-' + dishKey);
+  const isOpen = panel.style.maxHeight;
+
+  // Close all open panels
+  document.querySelectorAll('.accordion-panel').forEach(p => {
+    p.style.maxHeight = null;
+    p.innerHTML = '';
+  });
+
+  // If already open, just close
+  if (isOpen) {
+    panel.style.maxHeight = null;
+    panel.innerHTML = '';
+    return;
+  }
+
+  // Fill the panel content dynamically
+  const food = foodDetails[dishKey];
+  panel.innerHTML = `
+    <div class="accordion-content">
+      <p><strong>Spoken Name:</strong> ${food.pronunciation}</p>
+      <p><strong>Short Story:</strong> ${food.story}</p>
+      <p><strong>Cultural Note:</strong> ${food.cultural_note}</p>
+    </div>
+  `;
+  panel.style.maxHeight = panel.scrollHeight + "px"; // Smooth open
+}
+</script>
+
+<style>
+/* Dishes Layout */
+.dish-card {
+  margin-bottom: 20px;
+}
+
+/* Accordion Panel */
+.accordion-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  background-color: #f7ab69;
+  padding: 0 15px;
+  border-left: 2px solid #ff8c8c;
+  border-right: 2px solid #ff8c8c;
+  border-bottom: 2px solid #ff8c8c;
+  border-radius: 0 0 10px 10px;
+}
+
+.accordion-content {
+  padding: 10px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.flip-card-front {
+  cursor: pointer;
+}
+
+.flip-card-front:hover {
+  background-color: #ffe6e6;
+}
+</style>
 
 {% endblock %}
