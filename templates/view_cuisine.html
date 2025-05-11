@@ -9,13 +9,16 @@
 
   <section class="flavor-section">
     <h2>Flavors</h2>
-    <p class="flavor-text">{{ regions[region].flavors }}</p>
-  </section>
+    <p class="flavor-text">{{ regions[region].flavors | safe }}</p>
+  </section>  
 
-  <section class="ingredients-section">
-    <h2>Common Ingredients</h2>
-    <p class="ingredients-text">{{ regions[region].common_ingredients }}</p>
-  </section>
+
+  <h2>Common Ingredients</h2>
+  <div class="common-ingredients">
+    {% for ingredient in regions[region].common_ingredients %}
+      <span class="common-ingredient-tag">{{ ingredient }}</span>
+    {% endfor %}
+  </div>  
 
   <div class="dishes-section">
     {% for dish in regions[region].demo_dishes %}
