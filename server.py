@@ -24,7 +24,7 @@ def home():
     return render_template('home.html', hide_top_banner=True, nav_class='nav-home', is_homepage=True)
 
 
-
+ALLOWED_EXTS = ("png", "jpg", "jpeg")
 
 @app.route('/china-map')
 def china_map():
@@ -42,10 +42,32 @@ def china_map():
             filename = first_dish.lower().replace("'", "").replace(" ", "_") + ".png"
             region_images[region_name] = f"/static/media/{region_name}/{filename}"
 
+    # NEW: region‐pic URLs under static/media/map/region/
+    region_pics = {}
+    for region_name in regions:
+        lower = region_name.lower()
+        for ext in ALLOWED_EXTS:
+            fn = f"static/media/map/region/{lower}.{ext}"
+            if os.path.exists(fn):
+                region_pics[region_name] = url_for('static', filename=f"media/map/region/{lower}.{ext}")
+                break
+
+    # NEW: outfit‐pic URLs under static/media/map/outfit/
+    outfit_images = {}
+    for region_name in regions:
+        lower = region_name.lower()
+        for ext in ALLOWED_EXTS:
+            fn = f"static/media/map/outfit/{lower}.{ext}"
+            if os.path.exists(fn):
+                outfit_images[region_name] = url_for('static', filename=f"media/map/outfit/{lower}.{ext}")
+                break
+
     return render_template(
         'china_map.html',
         regions=regions,
         region_images=region_images,
+        region_pics=region_pics,
+        outfit_images=outfit_images,
         progress=progress,
         max_progress=max_progress,
         hovered_region=None

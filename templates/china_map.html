@@ -5,6 +5,8 @@
   <script type="text/javascript" src="{{ url_for('static', filename = 'china_map.js') }}"></script>
   <script>
     const regionImages = {{ region_images | tojson }};
+    const regionPics     = {{ region_pics     | tojson }};
+    const outfitImages   = {{ outfit_images   | tojson }};
   </script>
     
   <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
@@ -20,10 +22,14 @@
   
       <!-- Hover pop-up -->
       <div class="region-info-box hidden" id="region-info">
-        <img id="region-image" src="" alt="Region image">
+        <div class="region-images">
+          <img id="region-image" src="" alt="Region" class="info-img">
+          <img id="outfit-image" src="" alt="Outfit" class="info-img">
+          <img id="dish-image"   src="" alt="Dish"   class="info-img">
+        </div>
         <div class="region-info-text">
           <h4 id="region-name"></h4>
-          <a id="explore-link" href="#">Explore ></a>
+          <a id="explore-link" href="#" style="color: #007acc;">Explore ></a>
         </div>
       </div>
     </div>
