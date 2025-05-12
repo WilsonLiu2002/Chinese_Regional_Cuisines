@@ -87,27 +87,39 @@ p {
 .dot-jiangnan { top: 290px; left: 480px; }
   
 .region-info-box {
-    position: absolute;
-    background: white;
-    border: 2px solid #ccc;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    z-index: 5;
+  position: absolute;
+  width: 260px;                /* fixed width so all cards match */
+  box-sizing: border-box;      /* include padding/border in that width */
+  background: white;
+  border: 2px solid #ccc;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;             /* allow text to drop below images */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  z-index: 5;
 }
-  
+
 .region-info-box img {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    margin-right: 10px;
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  margin-right: 5px;
+  flex-shrink: 0;              /* never shrink the images */
 }
-  
+
+.region-info-text {
+  flex: 0 0 100%;              /* on wrap, span the full width */
+  min-width: 0;                /* let it get smaller if needed */
+  margin-top: 8px;             /* space from the images */
+  text-align: center;          /* center your name + link */
+  /* no white-space/overflow rules here—let it wrap normally */
+}
+
 .region-info-box.hidden {
-    display: none;
+  display: none;
 }
+
   
 .progress-container {
     margin-top: 30px;

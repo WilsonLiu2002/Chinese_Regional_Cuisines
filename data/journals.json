@@ -1,47 +1,7 @@
 {
-  "Xinjiang": [
-    {
-      "answers": {
-        "q0": "",
-        "q1": "",
-        "q2": ""
-      }
-    }
-  ],
-  "Guangdong": [
-    {
-      "answers": {
-        "q0": "",
-        "q1": "",
-        "q2": ""
-      }
-    }
-  ],
-  "Dongbei": [
-    {
-      "answers": {
-        "q0": "",
-        "q1": "",
-        "q2": ""
-      }
-    }
-  ],
-  "Sichuan": [
-    {
-      "answers": {
-        "q0": "",
-        "q1": "",
-        "q2": ""
-      }
-    }
-  ],
-  "Jiangnan": [
-    {
-      "answers": {
-        "q0": "",
-        "q1": "",
-        "q2": ""
-      }
-    }
-  ]
+  "Xinjiang": [],
+  "Guangdong": [],
+  "Dongbei": [],
+  "Sichuan": [],
+  "Jiangnan": []
 }

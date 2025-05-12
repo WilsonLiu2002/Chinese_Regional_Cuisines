@@ -7,8 +7,19 @@ function setupRegionHover() {
 
     clearTimeout(hideTimeout);
 
-    // Update content in the popup
-    $("#region-image").attr("src", regionImages[region]);
+    // — NEW: dish image
+    $("#dish-image")
+      .attr("src", regionImages[region]   || '/static/media/placeholder_dish.png');
+
+    // — UPDATED: region snapshot
+    $("#region-image")
+      .attr("src", regionPics[region]     || '/static/media/placeholder_region.png');
+
+    // — NEW: outfit image
+    $("#outfit-image")
+      .attr("src", outfitImages[region]   || '/static/media/placeholder_outfit.png');
+
+
     $("#region-name").text(region);
     $("#explore-link").attr("href", "/learn_culture/" + region.toLowerCase());
 

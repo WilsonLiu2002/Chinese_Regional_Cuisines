@@ -2,8 +2,20 @@
   "Jiangnan": {
     "chinese_name": "江南",
     "flavors": "Jiangnan flavors are known for being <span style='font-size: 1.6rem; color:#4a90e2; font-weight:bold;'>light</span>, <span style='font-size: 1.4rem; font-style:italic; color:#7f8c8d;'>delicate</span>, and slightly <span style='font-size: 1.5rem; font-weight:bold; color:#ffc107;'>sweet</span>, often featuring <span style='font-size: 1.4rem; color:#d25b4a;'>fresh seafood</span>, soya-based sauces, and subtle use of vinegar. Dishes are typically <span style='font-size: 1.5rem; font-weight:bold;'>steamed</span> or <span style='font-size: 1.5rem; font-weight:bold;'>braised</span>, with a focus on <span style='font-size: 1.4rem; color:#ff8c8c;'>umami</span> and tender textures. Seasoning is mild, allowing the natural flavors of the ingredients to shine through.",
-    "common_ingredients": ["Fish", "Shrimp", "Crab", "Eel", "Lotus root", "Bamboo shoots", "Shiitake mushrooms", "Soy sauce", "Sugar", "Shaoxing wine", "Ginger"],
-    "status": true,
+    "common_ingredients": [
+      "Fish",
+      "Shrimp",
+      "Crab",
+      "Eel",
+      "Lotus root",
+      "Bamboo shoots",
+      "Shiitake mushrooms",
+      "Soy sauce",
+      "Sugar",
+      "Shaoxing wine",
+      "Ginger"
+    ],
+    "status": false,
     "culture_video": "https://youtu.be/iCpS6r4cCGw?si=bBMi65CMP-xvPdkZ",
     "demo_dishes": [
       "Sweet Lotus Root (桂花糖藕)",
@@ -14,8 +26,19 @@
   "Sichuan": {
     "chinese_name": "四川",
     "flavors": "Sichuan cuisine is known for its <span style='font-size: 1.6rem; font-weight:bold; color:#ff8c8c;'>bold</span>, intense flavors, particularly its combination of <span style='font-size: 1.4rem; color:#ff8c8c;'>spiciness</span> and numbing sensations. It features the prominent use of chili peppers, Sichuan peppercorns, garlic, and ginger. The cuisine is characterized by its <span style='font-size: 1.4rem; color:#ff8c8c;'>spicy</span>, <span style='font-size: 1.4rem; color:#28a745;'>sour</span>, and <span style='font-size: 1.5rem; color:#ff8c8c;'>umami</span> flavors, with an emphasis on layered heat and rich sauces. Dishes are often stir-fried, steamed, or braised, with a focus on strong, bold tastes that stimulate the palate.",
-    "common_ingredients": ["Chili peppers", "Sichuan peppercorns", "Garlic", "Ginger", "Soy sauce", "Fermented bean paste (Doubanjiang)", "Tofu", "Chicken", "Beef", "Pork"],
-    "status": true,
+    "common_ingredients": [
+      "Chili peppers",
+      "Sichuan peppercorns",
+      "Garlic",
+      "Ginger",
+      "Soy sauce",
+      "Fermented bean paste (Doubanjiang)",
+      "Tofu",
+      "Chicken",
+      "Beef",
+      "Pork"
+    ],
+    "status": false,
     "culture_video": "https://youtu.be/nZ5EMY06QZc?si=t8hv02upG1KUU2EC",
     "demo_dishes": [
       "Lazi Chicken (辣子鸡)",
@@ -26,8 +49,19 @@
   "Guangdong": {
     "chinese_name": "广东",
     "flavors": "Guangdong cuisine is known for its fresh, <span style='font-size: 1.6rem; font-weight:bold; color:#4a90e2;'>light</span> flavors, focusing on the natural taste of ingredients. It features a delicate balance of <span style='font-size: 1.4rem; color:#4a90e2;'>umami</span>, <span style='font-size: 1.5rem; color:#ffc107;'>sweet</span>, and savory profiles, with an emphasis on <span style='font-size: 1.5rem; font-weight:bold;'>steaming</span> and <span style='font-size: 1.5rem; font-weight:bold;'>stir-frying</span> techniques. The cuisine often highlights seafood, chicken, and vegetables, using mild seasonings like soy sauce, ginger, and spring onions to enhance the natural flavors without overwhelming them. Dishes are typically not overly <span style='font-size: 1.4rem; color:#ff8c8c;'>spicy</span>, offering a refined, subtle taste.",
-    "common_ingredients": ["Soy sauce", "Ginger", "Spring onions", "Garlic", "Shaoxing wine", "Oyster sauce", "Chicken", "Seafood", "Mushrooms", "Chinese parsley"],
-    "status": true,
+    "common_ingredients": [
+      "Soy sauce",
+      "Ginger",
+      "Spring onions",
+      "Garlic",
+      "Shaoxing wine",
+      "Oyster sauce",
+      "Chicken",
+      "Seafood",
+      "Mushrooms",
+      "Chinese parsley"
+    ],
+    "status": false,
     "culture_video": "https://youtu.be/iAxIycMqQdk?si=zFmjkk1DL54EPs48",
     "demo_dishes": [
       "Char Siu (叉烧)",
@@ -38,8 +72,19 @@
   "Dongbei": {
     "chinese_name": "东北",
     "flavors": "Dongbei cuisine is known for its hearty, robust flavors, focusing on savory and <span style='font-size: 1.6rem; font-weight:bold; color:#ff8c8c;'>umami</span> profiles. It features rich dishes made with pork, beef, cabbage, and potatoes, often using soy sauce, garlic, ginger, and vinegar. The cuisine utilizes pickling, braising, and stir-frying techniques, with mildly <span style='font-size: 1.5rem; color:#ff8c8c;'>spicy</span> and comforting flavors that highlight the natural taste of meats and vegetables. The use of <span style='font-size: 1.4rem; color:#ff8c8c;'>ginger</span> and <span style='font-size: 1.4rem; font-style:italic; color:#7f8c8d;'>vinegar</span> provides a subtle tangy kick, complementing the savory richness.",
-    "common_ingredients": ["Pork", "Beef", "Cabbage", "Potatoes", "Garlic", "Ginger", "Soy sauce", "Vinegar", "Green onions", "Fermented soybean paste"],
-    "status": true,
+    "common_ingredients": [
+      "Pork",
+      "Beef",
+      "Cabbage",
+      "Potatoes",
+      "Garlic",
+      "Ginger",
+      "Soy sauce",
+      "Vinegar",
+      "Green onions",
+      "Fermented soybean paste"
+    ],
+    "status": false,
     "culture_video": "https://youtu.be/AyTm1cj01sM?si=QgnMPjC362OxZyYF",
     "demo_dishes": [
       "Dumpling (饺子)",
@@ -50,8 +95,19 @@
   "Xinjiang": {
     "chinese_name": "新疆",
     "flavors": "Xinjiang cuisine is known for its <span style='font-size: 1.8rem; font-weight:bold; color:#ff8c8c;'>bold</span>, aromatic flavors, featuring lamb, beef, and a variety of spices like cumin, chili, and garlic. The cuisine emphasizes grilling, roasting, and stir-frying techniques, with dishes like lamb kebabs, pilaf, and hand-pulled noodles. The rich, savory flavors are complemented by slight <span style='font-size: 1.6rem; color:#ff8c8c;'>spiciness</span>, <span style='font-size: 1.5rem; color:#7f8c8d;'>earthy</span> and <span style='font-size: 1.6rem; color:#ff8c8c;'>aromatic</span> spices, reflecting the region's Central Asian and Middle Eastern influences. <span style='font-size: 1.5rem; color:#28a745;'>Cumin</span> and <span style='font-size: 1.5rem; color:#28a745;'>turmeric</span> are used to give a warm, inviting flavor to many of the region's dishes.",
-    "common_ingredients": ["Lamb", "Beef", "Cumin", "Chili peppers", "Garlic", "Onions", "Tomatoes", "Bell peppers", "Flatbread (naan)", "Turmeric"],
-    "status": true,
+    "common_ingredients": [
+      "Lamb",
+      "Beef",
+      "Cumin",
+      "Chili peppers",
+      "Garlic",
+      "Onions",
+      "Tomatoes",
+      "Bell peppers",
+      "Flatbread (naan)",
+      "Turmeric"
+    ],
+    "status": false,
     "culture_video": "https://youtu.be/Zj6FK8CIUmE?si=96ggUxLlIZjtZSra",
     "demo_dishes": [
       "Baked Naan (烤馕)",
